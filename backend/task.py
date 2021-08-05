@@ -28,15 +28,8 @@ def make_all_aboutitem_false_except(latest_id):
         
 
 @shared_task
-def send_mail_task(contact_email_get, contact_description_get, contact_reply_get, header, contact_id):
-    email_template_name = "frontend/reply_mail.txt"
-    c = {
-        'contact_email_get' : contact_email_get,
-        'contact_description_get' : contact_description_get,
-        'contact_reply_get' : contact_reply_get,
-        }
-    email_body = render_to_string(email_template_name, c)
-    send_mail(header, email_body,
+def send_mail_task(header, body, contact_email_get, contact_id):
+    send_mail(header, body,
             'Vatsal Vohera <settings.EMAIL_HOST_USER>',   
             [contact_email_get],
             fail_silently = False
