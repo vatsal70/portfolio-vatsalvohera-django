@@ -323,22 +323,20 @@ def admin_contact_reply(request, contact_id):
         contact_email_get = request.POST.get('contact_email_get')
         contact_description_get = request.POST.get('contact_description_get')
         contact_reply_get = request.POST.get('contact_reply_get')
-        print(contact_email_get)
-        print(contact_description_get)
-        print(contact_reply_get)
-        # email_template_name = "frontend/reply_mail.txt"
-        # c = {
-        #     'contact_email_get' : contact_email_get,
-        #     'contact_description_get' : contact_description_get,
-        #     'contact_reply_get' : contact_reply_get,
-        #     }
-        # email_body = render_to_string(email_template_name, c)
-        # send_mail('Reply', email_body ,
-        #     'Vatsal Vohera. <settings.EMAIL_HOST_USER>',   
-        #     [contact_email_get],
-        #     fail_silently = False
-        #     )
-        send_mail_task.delay(contact_email_get, contact_description_get, contact_reply_get, "Reply", contact_id)
+        # print("contact_email_get", contact_email_get)
+        # print("contact_description_get", contact_description_get)
+        # print("contact_reply_get", contact_reply_get)
+        email_template_name = "frontend/reply_mail.txt"
+        c = {
+             'contact_email_get' : contact_email_get,
+             'contact_description_get' : contact_description_get,
+             'contact_reply_get' : contact_reply_get,
+             }
+        email_body = render_to_string(email_template_name, c)
+        send_mail_task.delay('Reply', email_body,   
+             contact_email_get,
+             contact_id,
+            )
         return redirect('admin_contact_page')
     params = {
         'contact_email': contact_email,
