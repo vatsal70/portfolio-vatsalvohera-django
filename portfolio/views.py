@@ -364,6 +364,12 @@ def admin_contact_delete(request, contact_id):
 @active_user_required
 def admin_link(request):
     link_model = Link.objects.all()
+    if request.method == "POST":
+        link_name = request.POST.get('link_name')
+        link_url = request.POST.get('link_url')
+        link = Link(link_name=link_name, link_url=link_url)
+        link.save()
+        return redirect('admin_link')
     params = {
         'link_model': link_model,
         'link_page': True,
