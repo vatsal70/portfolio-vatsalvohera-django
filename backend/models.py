@@ -82,7 +82,7 @@ class User(AbstractUser):
         
 class About(models.Model):
     about_text = models.CharField(max_length=2000, blank = True)
-    img = models.ImageField(upload_to='development/about/', storage=MediaCloudinaryStorage())
+    img = models.ImageField(upload_to='about/', storage=MediaCloudinaryStorage())
     current = models.BooleanField(default = True)
     
     def __str__(self):
