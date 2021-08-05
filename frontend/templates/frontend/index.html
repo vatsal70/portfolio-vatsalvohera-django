@@ -116,12 +116,14 @@
                             <div class="skills__names">
                                 <span class="skills__name">{{skill.skill_name}}</span>
                             </div>
+                            <!--                        
                             <div class="skills__bar skills__html" id="bar" style="width: 100%;">
                                 <span class="skills__b"></span>
                             </div>
                             <div class="skills__per">
                                 <span class="skills__percentage">{{skill.skill_percentage}}%</span>
-                            </div>
+                            </div> 
+                            -->
                         </div>
                     {% endfor %}
                 </div>
@@ -191,13 +193,13 @@
             <p>Copyright &#169; <script>document.write(new Date().getFullYear())</script> All rights reserved.</p>
         </footer>
        <script>
-        skills__data = document.getElementsByClassName('skills__data');
-        for (let i = 0; i < skills__data.length; i++) {
+        //skills__data = document.getElementsByClassName('skills__data');
+        //for (let i = 0; i < skills__data.length; i++) {
                 //console.log(skills__data[i].children[0].innerText);
-                percentage = skills__data[i].children[2].innerText;
+          //      percentage = skills__data[i].children[2].innerText;
                 //console.log(percentage)
-                skills__data[i].children[1].style.width = percentage;
-           }
+            //    skills__data[i].children[1].style.width = percentage;
+           //}
         home__social = document.getElementsByClassName('home__social')
         //console.log(home__social[0].children[0].children[0].className)
         //console.log(home__data)
