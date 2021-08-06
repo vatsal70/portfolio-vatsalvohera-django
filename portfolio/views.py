@@ -288,8 +288,7 @@ def admin_experience_delete(request, work_id):
 
 
 
-@login_required(login_url='/authentication_required/')
-@active_user_required
+
 def admin_contact_message(request):
     if request.method == "POST":
         contact_name = request.POST.get('contact_name')
