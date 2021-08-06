@@ -30,7 +30,7 @@ def make_all_aboutitem_false_except(latest_id):
 @shared_task
 def send_mail_task(header, body, contact_email_get, contact_id):
     send_mail(header, body,
-            'Vatsal Vohera <settings.EMAIL_HOST_USER>',   
+            'Vatsal Vohera <studentteacherportal001@gmail.com>',   
             [contact_email_get],
             fail_silently = False
             )
