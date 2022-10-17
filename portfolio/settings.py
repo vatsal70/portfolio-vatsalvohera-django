@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY', default='')
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me']
+ALLOWED_HOSTS = ['127.0.0.1', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in']
 # ALLOWED_HOSTS = []
 
 
