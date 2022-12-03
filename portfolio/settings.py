@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '52.90.110.3', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in']
 # ALLOWED_HOSTS = []
