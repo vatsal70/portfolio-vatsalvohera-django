@@ -110,9 +110,33 @@ DATABASES = {
     }
 }
 
+# HEROKU
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'd1dcjpqkkmkffo',
+#        'USER': 'fupkqlvkeeakze',
+#        'PASSWORD': 'bc458c2e6d2a963d466f766f7e24e98990a721caa612dce16aaf6f76b449f8d5',
+#        'HOST': 'ec2-3-237-55-151.compute-1.amazonaws.com',
+#        'PORT': '5432',
+#    }
+# }
+
+# AWS
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'portfolio-database', 
+       'USER': 'adminuser',
+       'PASSWORD': 'Iloveyou3000',
+       'HOST':  'portfolio-database.cchsdvtlhqwb.us-east-1.rds.amazonaws.com',
+       'PORT': '5432',
+   }
+}
+
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
