@@ -30,7 +30,7 @@ SECRET_KEY = config('SECRET_KEY', default='')
 # DEBUG = True
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '52.90.110.3', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in']
+ALLOWED_HOSTS = ['127.0.0.1', '13.233.5.106', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in']
 # ALLOWED_HOSTS = []
 
 
@@ -103,33 +103,23 @@ AUTH_USER_MODEL = 'backend.User'  #changes the built-in User model to our custom
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-# HEROKU
 # DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'd1dcjpqkkmkffo',
-#        'USER': 'fupkqlvkeeakze',
-#        'PASSWORD': 'bc458c2e6d2a963d466f766f7e24e98990a721caa612dce16aaf6f76b449f8d5',
-#        'HOST': 'ec2-3-237-55-151.compute-1.amazonaws.com',
-#        'PORT': '5432',
-#    }
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
 # }
 
-# AWS
+
+
+# AWS POSTGRESQL
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'portfolio-database', 
-       'USER': 'adminuser',
-       'PASSWORD': 'Iloveyou3000',
-       'HOST':  'portfolio-database.cchsdvtlhqwb.us-east-1.rds.amazonaws.com',
+       'NAME': config('DB_NAME'), 
+       'HOST': config('DB_HOST'),
+       'USER': config('DB_USER'),
+       'PASSWORD': config('DB_PWD'),
        'PORT': '5432',
    }
 }
