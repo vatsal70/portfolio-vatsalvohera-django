@@ -111,15 +111,14 @@ AUTH_USER_MODEL = 'backend.User'  #changes the built-in User model to our custom
 # }
 
 
-
 # AWS POSTGRESQL
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': config('DB_NAME'), 
-       'HOST': config('DB_HOST'),
-       'USER': config('DB_USER'),
-       'PASSWORD': config('DB_PWD'),
+       'NAME': 'portfolio', 
+       'HOST': 'database-1.ch1yxtludx4b.ap-south-1.rds.amazonaws.com',
+       'USER': 'adminuser',
+       'PASSWORD': 'Iloveyou3000',
        'PORT': '5432',
    }
 }
