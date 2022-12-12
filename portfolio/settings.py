@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env.
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,9 +31,9 @@ SECRET_KEY = config('SECRET_KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = True
+DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', '13.233.5.106', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in']
+ALLOWED_HOSTS = ['127.0.0.1', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in', config('ALLOWED_HOST_1')]
 # ALLOWED_HOSTS = []
 
 
@@ -62,7 +65,7 @@ CLOUDINARY_STORAGE = {
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-
+print(config('CLOUD_NAME', default=''))
 
 
 MIDDLEWARE = [
@@ -115,15 +118,16 @@ AUTH_USER_MODEL = 'backend.User'  #changes the built-in User model to our custom
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'portfolio', 
-       'HOST': 'database-1.ch1yxtludx4b.ap-south-1.rds.amazonaws.com',
-       'USER': 'adminuser',
-       'PASSWORD': 'Iloveyou3000',
-       'PORT': '5432',
+       'NAME': config('PGDATABASE'), 
+       'HOST': config('PGHOST'),
+       'USER': config('PGUSER'),
+       'PASSWORD': config('PGPASSWORD'),
+       'PORT': config('PGPORT'),
    }
 }
+print(DATABASES)
 
-import dj_database_url
+# import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
 
