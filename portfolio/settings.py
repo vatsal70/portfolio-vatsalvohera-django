@@ -56,9 +56,9 @@ INSTALLED_APPS = [
 
 # Storage settings
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('CLOUD_NAME', default=''), 
-    'API_KEY': config('API_KEY', default=''), 
-    'API_SECRET': config('API_SECRET', default=''), 
+    'CLOUD_NAME': 'ds1mnjqo5' #config('CLOUD_NAME', default=''), 
+    'API_KEY': '785946156438477' #config('API_KEY', default=''), 
+    'API_SECRET': 'oOgZruV7dAzTOMksHQDDKyaeyWw' #config('API_SECRET', default=''), 
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
