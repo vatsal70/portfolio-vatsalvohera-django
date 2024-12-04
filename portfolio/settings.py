@@ -103,25 +103,25 @@ AUTH_USER_MODEL = 'backend.User'  #changes the built-in User model to our custom
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # AWS POSTGRESQL
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'portfolio', 
-#        'HOST': 'database-1.ch1yxtludx4b.ap-south-1.rds.amazonaws.com',
-#        'USER': 'adminuser',
-#        'PASSWORD': 'Iloveyou3000',
-#        'PORT': '5432',
-#    }
-# }
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'django_portfolio_6eh0', 
+       'HOST': 'dpg-ct8414btq21c73cofcr0-a',
+       'USER': 'django_portfolio_6eh0_user',
+       'PASSWORD': 'HL9GrYXZh8jXzPfUNuU4HBcnm9NwYqjD',
+       'PORT': '5432',
+   }
+}
 
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
