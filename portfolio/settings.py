@@ -24,13 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-olr4+a1^ac#tj37ak1o(z&-znxbl*c6x6c3^8^(3sg2$g@$fz7'
-SECRET_KEY = config('SECRET_KEY', default='')
+SECRET_KEY = '0%t7i$$=pgje@5!g+mv3m&aere$d41wgml7&r8ja()(mb=&v!#' #config('SECRET_KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '13.233.5.106', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in']
+ALLOWED_HOSTS = ['127.0.0.1', '13.233.5.106', 'portfolio-vatsalvohera.herokuapp.com', 'www.vatsalvohera.social', 'vatsalvohera.social', 'vatsalvohera.me', 'www.vatsalvohera.me', 'www.vatsalvohera.in', 'vatsalvohera.in', '*']
 # ALLOWED_HOSTS = []
 
 
@@ -103,27 +103,27 @@ AUTH_USER_MODEL = 'backend.User'  #changes the built-in User model to our custom
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # AWS POSTGRESQL
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'portfolio', 
-       'HOST': 'database-1.ch1yxtludx4b.ap-south-1.rds.amazonaws.com',
-       'USER': 'adminuser',
-       'PASSWORD': 'Iloveyou3000',
-       'PORT': '5432',
-   }
-}
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'portfolio', 
+#        'HOST': 'database-1.ch1yxtludx4b.ap-south-1.rds.amazonaws.com',
+#        'USER': 'adminuser',
+#        'PASSWORD': 'Iloveyou3000',
+#        'PORT': '5432',
+#    }
+# }
 
-import dj_database_url
+# import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
 
@@ -197,8 +197,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #For sending Emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST') #'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com' #config('EMAIL_HOST') #'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'vatsalvohera255@gmail.com' #config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = 'fpyq fwxi psmq imqd' #config('EMAIL_HOST_PASSWORD')
