@@ -111,21 +111,13 @@ AUTH_USER_MODEL = 'backend.User'  #changes the built-in User model to our custom
 # }
 
 
-# AWS POSTGRESQL
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'django_portfolio_6eh0', 
-       'HOST': 'dpg-ct8414btq21c73cofcr0-a',
-       'USER': 'django_portfolio_6eh0_user',
-       'PASSWORD': 'HL9GrYXZh8jXzPfUNuU4HBcnm9NwYqjD',
-       'PORT': '5432',
-   }
+    'default': dj_database_url.config(
+        # TODO update this row to your proper connection string
+        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600
+    )
 }
-
-# import dj_database_url
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
