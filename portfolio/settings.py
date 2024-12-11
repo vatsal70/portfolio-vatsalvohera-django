@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-olr4+a1^ac#tj37ak1o(z&-znxbl*c6x6c3^8^(3sg2$g@$fz7'
-SECRET_KEY = '0%t7i$$=pgje@5!g+mv3m&aere$d41wgml7&r8ja()(mb=&v!#' #config('SECRET_KEY', default='')
+SECRET_KEY = os.environ.get('SECRET_KEY') #config('SECRET_KEY', default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -57,9 +57,9 @@ INSTALLED_APPS = [
 
 # Storage settings
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'ds1mnjqo5', #config('CLOUD_NAME', default=''), 
-    'API_KEY': '785946156438477', #config('API_KEY', default=''), 
-    'API_SECRET': 'oOgZruV7dAzTOMksHQDDKyaeyWw' #config('API_SECRET', default=''), 
+    'CLOUD_NAME': os.environ.get('CLOUD_NAME'), #config('CLOUD_NAME', default=''), 
+    'API_KEY': os.environ.get('API_KEY'), #config('API_KEY', default=''), 
+    'API_SECRET': os.environ.get('API_SECRET') #config('API_SECRET', default=''), 
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -190,7 +190,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #For sending Emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com' #config('EMAIL_HOST') #'smtp.gmail.com'
+EMAIL_HOST = os.environ.get('EMAIL_HOST') #config('EMAIL_HOST') #'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') #config('EMAIL_HOST_USER')
